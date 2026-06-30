@@ -1121,9 +1121,9 @@ static void serial2WriteS (const char *s)
 
 // Writes a number of characters from a buffer to the serial output stream, blocks if buffer full
 //
-static void serial2Write (const char *s, uint16_t length)
+static void serial2Write (const uint8_t *s, uint16_t length)
 {
-    char *ptr = (char *)s;
+    const uint8_t *ptr = s;
 
     while(length--)
         serial2PutC(*ptr++);
@@ -1158,8 +1158,8 @@ static int32_t serial2GetC (void)
     if(tail == rxbuf2.head)
         return -1; // no data available
 
-    int32_t data = (int32_t)rxbuf2.data[tail]; 	// Get next character
-    rxbuf2.tail = BUFNEXT(tail, rxbuf2);    	// and update pointer
+    int32_t data = (int32_t)rxbuf2.data[tail];  // Get next character
+    rxbuf2.tail = BUFNEXT(tail, rxbuf2);        // and update pointer
 
     return data;
 }
@@ -1208,7 +1208,7 @@ static bool serial2Disable (bool disable)
     return true;
 }
 
-static bool serial2EnqueueRtCommand (char c)
+static bool serial2EnqueueRtCommand (uint8_t c)
 {
     return enqueue_realtime_command2(c);
 }
