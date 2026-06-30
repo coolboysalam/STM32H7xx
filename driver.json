@@ -331,7 +331,6 @@
       "caps": {
         "axes": 8,
         "eeprom": 0,
-        "sdcard": 0,
         "fram": 0,
         "safety_door": 0,
         "serial_ports": 1,

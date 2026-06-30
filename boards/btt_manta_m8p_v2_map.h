@@ -31,7 +31,12 @@
 #define BOARD_URL "https://github.com/bigtreetech/Manta-M8P"
 
 #define SERIAL_PORT                 1       // GPIOA: TX =  9, RX = 10
+
+#if SDCARD_ENABLE
+#define SPI_PORT                    2       // GPIOB: SCK = 13, MISO = 14, MOSI = 15
+#else
 #define SPI_PORT                    3       // GPIOC: SCK = 10, MISO - 11, MOSI - 12
+#endif
 
 // todo: I2C3 is routed to a board header, however the clock & data pins
 //       are split across two ports - which is not currently supported..
@@ -218,7 +223,11 @@
 // #define SAFETY_DOOR_PIN             AUXINPUTn_PIN
 #endif
 
-#define CONTROL_INMODE              GPIO_SINGLE
+#if SDCARD_ENABLE                   // Wired to SPI2
+#define SDCARD_SDIO                 0
+#define SD_CS_PORT                  GPIOB
+#define SD_CS_PIN                   12
+#endif
 
 #if TRINAMIC_UART_ENABLE
 
