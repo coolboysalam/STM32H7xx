@@ -107,7 +107,7 @@
         "trinamic_spi_cs": 1,
         "trinamic_uart_addr": 1,
         "pio_board": "generic_stm32h743vi",
-        "ldscript": "STM32H743VITX_FLASH_BL.ld"
+        "ldscript": "STM32H743VITX_BL_FLASH.ld"
       },
       "symbols" : {
          "STM32H743xx": "",
@@ -151,7 +151,7 @@
         "trinamic_spi_cs": 1,
         "trinamic_uart_addr": 1,
         "pio_board": "generic_stm32h723vg",
-        "ldscript": "STM32H723VGTX_FLASH_BL.ld"
+        "ldscript": "STM32H723VGTX_BL_FLASH.ld"
       },
       "symbols" : {
         "STM32H723xx": "",
@@ -209,7 +209,7 @@
         "trinamic": 5160,
         "trinamic_r_sense": 50,
         "pio_board": "generic_stm32h723vg",
-        "ldscript": "STM32H723VGTX_FLASH_BL.ld"
+        "ldscript": "STM32H723VGTX_BL_FLASH.ld"
       },
       "symbols" : {
         "STM32H723xx": "",
@@ -261,7 +261,7 @@
         "trinamic_spi_cs": 1,
         "trinamic_uart_addr": 1,
         "pio_board": "generic_stm32h723ze",
-        "ldscript": "STM32H723ZETX_FLASH_BL.ld"
+        "ldscript": "STM32H723ZETX_BL_NONVS_FLASH.ld"
       },
       "symbols" : {
         "STM32H723xx": "",
@@ -313,7 +313,7 @@
         "trinamic_spi_cs": 1,
         "trinamic_uart_addr": 1,
         "pio_board": "generic_stm32h723ze",
-        "ldscript": "STM32H723ZETX_FLASH_BL.ld"
+        "ldscript": "STM32H723ZETX_BL_NONVS_FLASH.ld"
       },
       "symbols" : {
         "STM32H723xx": "",
@@ -363,7 +363,7 @@
         "trinamic_spi_cs": 1,
         "trinamic_uart_addr": 1,
         "pio_board": "generic_stm32h723ze",
-        "ldscript": "STM32H723ZETX_FLASH_BL.ld"
+        "ldscript": "STM32H723ZETX_BL_FLASH.ld"
       },
       "symbols" : {
         "STM32H723xx": "",
