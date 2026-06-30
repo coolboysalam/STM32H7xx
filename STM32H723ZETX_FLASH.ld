@@ -41,13 +41,13 @@ _Min_Heap_Size = 0x20000 ; /* required amount of heap  */
 _Min_Stack_Size = 0x3000 ; /* required amount of stack */
 
 /* Specify the memory areas
- * No EEPROM emulation for this part
  * DMA buffers for LwIP in first 64K of D1_RAM (needed for SDMMC1 access)
  */
 
 MEMORY
 {
-  FLASH (rx)        : ORIGIN = 0x08000000, LENGTH = 512K
+  FLASH (rx)        : ORIGIN = 0x08000000, LENGTH = 512K - 128K
+  EEPROM_EMUL (xrw) : ORIGIN = 0x08060000, LENGTH = 128K
   DTCMRAM (xrw)     : ORIGIN = 0x20000000, LENGTH = 128K
   RAM_D1_DMA (xrw)  : ORIGIN = 0x24000000, LENGTH = 64K
   RAM_D1 (xrw)      : ORIGIN = 0x24010000, LENGTH = 320K - LENGTH(RAM_D1_DMA)
@@ -55,6 +55,8 @@ MEMORY
   RAM_D3 (xrw)      : ORIGIN = 0x38000000, LENGTH = 16K
   ITCMRAM (xrw)     : ORIGIN = 0x00000000, LENGTH = 64K
 }
+
+_EEPROM_Emul_Start = ORIGIN(EEPROM_EMUL);
 
 /* Define output sections */
 SECTIONS
