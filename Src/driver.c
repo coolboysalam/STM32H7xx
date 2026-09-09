@@ -2390,7 +2390,7 @@ static bool driver_setup (settings_t *settings)
 
     IOInitDone = settings->version.id == 23;
 
-    hal.settings_changed(settings, (settings_changed_flags_t){0});
+    grbl.on_settings_changed(settings, (settings_changed_flags_t){0});
 
 #if ETHERNET_ENABLE
     enet_start();
@@ -2573,7 +2573,7 @@ bool driver_init (void)
     hal.timer.start = timerStart;
     hal.timer.stop = timerStop;
 
-    hal.settings_changed = settings_changed;
+    grbl.on_settings_changed = settings_changed;
 
     cycles2us_factor = 0xFFFFFFFFU / hal.f_mcu;
 
